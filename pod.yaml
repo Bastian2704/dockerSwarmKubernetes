@@ -1,0 +1,13 @@
+# Paso 1: un Pod suelto (sin controlador). Si muere, nadie lo recrea.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: grafana-pod
+  labels:
+    app: grafana-pod
+spec:
+  containers:
+    - name: grafana
+      image: grafana/grafana:11.2.0
+      ports:
+        - containerPort: 3000
